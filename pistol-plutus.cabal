@@ -55,27 +55,16 @@ library
 
   exposed-modules:      Cardano.Marketplace.Marketplace
 
-  build-depends:        aeson
-                      , bytestring
+  build-depends:        bytestring
                       , cardano-api
-                      , cardano-cli
-                      , cardano-ledger-alonzo
-                      , cardano-ledger-core
-                      , cardano-protocol-tpraos
-                      , cardano-slotting
-                      , containers
-                      , ouroboros-consensus
-                      , ouroboros-network
-                      , plutus-core
                       , plutus-ledger
                       , plutus-ledger-api
+                      , cardano-binary
                       , plutus-tx
                       , plutus-tx-plugin
                       , serialise
-                      , cardano-ledger-shelley
-                      , strict-containers
-                      , transformers
-                      , transformers-except
+                      , aeson
+                      , text
 
 
 executable pistol-plutus
@@ -85,9 +74,19 @@ executable pistol-plutus
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
   build-depends:        cardano-api
-                      , directory
-                      , filepath
-                      , pistol-plutus
+                      , cardano-ledger-alonzo
+                      , cardano-binary
+                      , plutus-ledger
+                      , serialise
+                      , plutus-trade
+                      , plutus-ledger-api
+                      , bytestring
+                      , aeson
+                      , containers
+                      , text
+                      , utf8-string
+                      , base16-bytestring
+                      , cardano-ledger-core
 
 
 -- executable create-script-context
