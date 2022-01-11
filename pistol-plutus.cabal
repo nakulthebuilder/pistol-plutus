@@ -45,16 +45,20 @@ library
 
   exposed-modules:      Cardano.Marketplace.Marketplace
 
-  build-depends:        bytestring
-                      , cardano-api
-                      , plutus-ledger
-                      , plutus-ledger-api
+  build-depends:        cardano-api
+                      , cardano-ledger-alonzo
                       , cardano-binary
-                      , plutus-tx
-                      , plutus-tx-plugin
+                      , plutus-ledger
                       , serialise
+                      , pistol-plutus
+                      , plutus-ledger-api
+                      , bytestring
                       , aeson
+                      , containers
                       , text
+                      , utf8-string
+                      , base16-bytestring
+                      , cardano-ledger-core
 
   ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
 
