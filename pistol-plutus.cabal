@@ -50,7 +50,6 @@ library
                       , cardano-binary
                       , plutus-ledger
                       , serialise
-                      , pistol-plutus
                       , plutus-ledger-api
                       , bytestring
                       , aeson
