@@ -48,7 +48,6 @@ library
   build-depends:        aeson
                       , bytestring
                       , cardano-api
-                      , cardano-cli
                       , cardano-ledger-alonzo
                       , cardano-ledger-core
                       , cardano-slotting
@@ -63,7 +62,10 @@ library
                       , serialise
                       , strict-containers
                       , transformers
-                      , transformers-except
+                      , cardano-binary
+                      , utf8-string
+                      , text
+                      , base16-bytestring
 
   ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
 
@@ -76,7 +78,6 @@ executable pistol-plutus
   build-depends:        aeson
                       , bytestring
                       , cardano-api
-                      , cardano-cli
                       , cardano-ledger-alonzo
                       , cardano-ledger-core
                       , cardano-slotting
@@ -91,5 +92,8 @@ executable pistol-plutus
                       , serialise
                       , strict-containers
                       , transformers
-                      , transformers-except
+                      , cardano-binary
+                      , utf8-string
+                      , text
+                      , base16-bytestring
                       , pistol-plutus
