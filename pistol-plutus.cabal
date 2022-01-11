@@ -61,7 +61,6 @@ library
                       , plutus-tx
                       , plutus-tx-plugin
                       , serialise
-                      , cardano-ledger-shelley
                       , strict-containers
                       , transformers
                       , transformers-except
@@ -90,7 +89,7 @@ executable pistol-plutus
                       , plutus-tx
                       , plutus-tx-plugin
                       , serialise
-                      , cardano-ledger-shelley
                       , strict-containers
                       , transformers
                       , transformers-except
+                      , pistol-plutus
