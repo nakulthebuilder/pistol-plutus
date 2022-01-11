@@ -43,7 +43,7 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.PlutusExample.Trade
+  exposed-modules:      Cardano.Marketplace.Marketplace
 
   build-depends:        bytestring
                       , cardano-api
