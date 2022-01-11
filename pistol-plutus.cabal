@@ -1,4 +1,4 @@
-cabal-version: 3.0
+cabal-version: 2.4
 
 name:                   pistol-plutus
 version:                1.0.0
@@ -12,10 +12,6 @@ extra-source-files:     README.md
 Flag unexpected_thunks
   Description:   Turn on unexpected thunks checks
   Default:       False
-
-Flag buildable
-  Description:   Whether this package is buildable
-  Default:       True
 
 common base
   build-depends: base >= 4.14 && < 4.15
@@ -33,16 +29,10 @@ common project-config
                         -Wpartial-fields
                         -Wredundant-constraints
                         -Wunused-packages
-                        -fobject-code
-                        -fno-ignore-interface-pragmas
-                        -fno-omit-interface-pragmas
-
-  if !flag(buildable)
-    buildable:          False
 
 common maybe-Win32
   if os(windows)
-     build-depends:     Win32
+     build-depends:    Win32
 
 library
   import:               base, project-config
@@ -53,7 +43,7 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.Marketplace.Marketplace
+  exposed-modules:      Cardano.PlutusExample.Trade
 
   build-depends:        bytestring
                       , cardano-api
@@ -66,11 +56,12 @@ library
                       , aeson
                       , text
 
+  ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
 
-executable pistol-plutus
+executable plutus-trade
   import:               base, project-config
   hs-source-dirs:       app
-  main-is:              pistol-plutus.hs
+  main-is:              plutus-trade.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
   build-depends:        cardano-api
@@ -87,43 +78,3 @@ executable pistol-plutus
                       , utf8-string
                       , base16-bytestring
                       , cardano-ledger-core
-
-
--- executable create-script-context
---   import:               base, project-config
---   hs-source-dirs:       app
---   main-is:              create-script-context.hs
---   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
-
---   build-depends:        bytestring
---                       , cardano-api
---                       , optparse-applicative
---                       , pistol-plutus
---                       , transformers
-
--- test-suite plutus-example-test
---   import:               base, project-config
-
---   hs-source-dirs:       test
---   main-is:              plutus-example-test.hs
---   type:                 exitcode-stdio-1.0
-
---   build-depends:        cardano-prelude
---                       , aeson
---                       , cardano-api
---                       , cardano-api:gen
---                       , cardano-ledger-alonzo
---                       , cardano-ledger-core
---                       , containers
---                       , hedgehog
---                       , plutus-example
---                       , plutus-ledger
---                       , plutus-ledger-api
---                       , cardano-ledger-shelley
-
-
---   other-modules:        Test.PlutusExample.Gen
---                         Test.PlutusExample.Plutus
---                         Test.PlutusExample.ScriptData
-
---   ghc-options:          -threaded -rtsopts -with-rtsopts=-N -with-rtsopts=-T
