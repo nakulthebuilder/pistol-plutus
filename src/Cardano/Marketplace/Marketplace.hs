@@ -17,8 +17,8 @@
 {-# LANGUAGE BangPatterns               #-}
 
 
--- module Cardano.Marketplace.Marketplace
---   ( tradeScript ) where
+module Cardano.Marketplace.Marketplace
+  (tradeSBS, tradeSerialised, TradeDatum(..), TradeDetails(..), TradeAction(..)) where
 
 import           Data.Map             as Map
 import qualified Prelude              as Haskell
