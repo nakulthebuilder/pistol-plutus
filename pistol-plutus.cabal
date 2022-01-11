@@ -51,7 +51,6 @@ library
                       , cardano-cli
                       , cardano-ledger-alonzo
                       , cardano-ledger-core
-                      , cardano-protocol-tpraos
                       , cardano-slotting
                       , containers
                       , ouroboros-consensus
@@ -81,7 +80,6 @@ executable pistol-plutus
                       , cardano-cli
                       , cardano-ledger-alonzo
                       , cardano-ledger-core
-                      , cardano-protocol-tpraos
                       , cardano-slotting
                       , containers
                       , ouroboros-consensus
@@ -96,4 +94,3 @@ executable pistol-plutus
                       , strict-containers
                       , transformers
                       , transformers-except
-                      , pistol-plutus
