@@ -43,7 +43,7 @@ import qualified Data.ByteString.Short as SBS
 import qualified Data.ByteString.Lazy  as LBS
 import           Cardano.Api hiding (Value, TxOut)
 import           Cardano.Api.Shelley hiding (Value, TxOut)
-import           Codec.Serialise hiding (encode)
+import           Codec.Serialise 
 import qualified Plutus.V1.Ledger.Api as Plutus
 
 -- Contract
